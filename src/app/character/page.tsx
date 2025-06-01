@@ -48,7 +48,6 @@ const [character, setCharacter] = useState<RickType | null>(null);
       </Typography>
 
       <Button variant="contained" color="primary" onClick={fetchCharacter}>
-        
         Find more
       </Button>
       {character && <DisplayCharacter {...character} />}

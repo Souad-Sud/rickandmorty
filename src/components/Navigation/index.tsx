@@ -24,7 +24,7 @@ interface NavLinkType {
 const navLinks: NavLinkType[] = [
   { name: "home", url: "/" },
   { name: "rick", url: "/rick" },
-  {name: "character", url: "/character"},
+  { name: "character", url: "/character" },
   { name: "about", url: "/about" },
 ];
 
@@ -57,36 +57,17 @@ const Navigation = () => {
     <AppBar position="static" sx={{ backgroundColor: "red" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            sx={{
-              mr: 3,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "Poppins",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt="Remy Sharp" src="/logo.png" />
-            </IconButton>
-          </Typography> */}
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-                 <IconButton
-                size="large"
-                aria-label="menu"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
+            <IconButton
+              size="large"
+              aria-label="menu"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -102,9 +83,7 @@ const Navigation = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: "block", md: "none" } }}
-              
             >
-
               {navLinks.map((item) => (
                 <MenuItem
                   key={item.name}
@@ -112,7 +91,7 @@ const Navigation = () => {
                   href={item.url}
                   onClick={handleCloseNavMenu}
                   selected={path === item.url}
-                  sx={{color: "black"}}
+                  sx={{ color: "black" }}
                 >
                   {item.name}
                 </MenuItem>
