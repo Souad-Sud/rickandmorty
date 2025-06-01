@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,9 +30,18 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
        <AppRouterCacheProvider >
-        <Header />
-        <Navigation />
-        {children}
+         <div
+            style={{
+              minHeight: '100vh',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <Header />
+            <Navigation />
+            <main style={{ flex: 1 }}>{children}</main>
+            <Footer />
+          </div>
        </AppRouterCacheProvider>
       </body>
     </html>

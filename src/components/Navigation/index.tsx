@@ -24,6 +24,7 @@ interface NavLinkType {
 const navLinks: NavLinkType[] = [
   { name: "home", url: "/" },
   { name: "rick", url: "/rick" },
+  {name: "character", url: "/character"},
   { name: "about", url: "/about" },
 ];
 
@@ -56,11 +57,10 @@ const Navigation = () => {
     <AppBar position="static" sx={{ backgroundColor: "red" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
+          {/* <Typography
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 3,
               display: { xs: "none", md: "flex" },
@@ -74,7 +74,7 @@ const Navigation = () => {
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               <Avatar alt="Remy Sharp" src="/logo.png" />
             </IconButton>
-          </Typography>
+          </Typography> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
                  <IconButton
